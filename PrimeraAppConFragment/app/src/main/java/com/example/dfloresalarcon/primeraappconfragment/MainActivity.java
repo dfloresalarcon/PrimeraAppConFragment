@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -24,11 +25,24 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new FragmentA())
-                    .commit();
+        if (getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE)
+        {
+            if (savedInstanceState == null) {
+                getFragmentManager().beginTransaction()
+                        .add(R.id.contenedorIzq, new FragmentA())
+                        .commit();
+            }
         }
+        else
+        {
+            if (savedInstanceState == null) {
+                getFragmentManager().beginTransaction()
+                        .add(R.id.container, new FragmentA())
+                        .commit();
+            }
+        }
+
+
     }
 
     @Override
