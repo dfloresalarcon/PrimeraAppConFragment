@@ -26,42 +26,16 @@ public class FragmentA extends Fragment {
         //RECOGER EL BOTON DEL LAYOUT
         Button abrirB = (Button) rootView.findViewById(R.id.openB);
 
-        final Bundle b = savedInstanceState;
+        abrirB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //tostada
+                Toast.makeText(getActivity(), "Abriendooo", Toast.LENGTH_LONG).show();
 
-
-        if (getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE)
-        {
-            abrirB.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //tostada
-                    Toast.makeText(getActivity(), "Abriendooo", Toast.LENGTH_LONG).show();
-
-                    if (b == null) {
-                        getFragmentManager().beginTransaction()
-                                .add(R.id.contenedorDer, new FragmentB())
-                                .commit();
-                    }
-                }
-            });
-
-        }
-        else
-        {
-            abrirB.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //tostada
-                    Toast.makeText(getActivity(), "Abriendooo", Toast.LENGTH_LONG).show();
-
-                    Intent intent = new Intent(getActivity(), SecondActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }
-
-
-
+                Intent intent = new Intent(getActivity(), SecondActivity.class);
+                startActivity(intent);
+            }
+        });
         return rootView;
     }
 }

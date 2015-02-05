@@ -25,24 +25,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE)
-        {
-            if (savedInstanceState == null) {
-                getFragmentManager().beginTransaction()
-                        .add(R.id.contenedorIzq, new FragmentA())
-                        .commit();
-            }
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction()
+                    .add(R.id.container, new FragmentA())
+                    .commit();
         }
-        else
-        {
-            if (savedInstanceState == null) {
-                getFragmentManager().beginTransaction()
-                        .add(R.id.container, new FragmentA())
-                        .commit();
-            }
-        }
-
-
     }
 
     @Override

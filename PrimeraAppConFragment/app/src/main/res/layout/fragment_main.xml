@@ -9,8 +9,8 @@
     tools:context=".MainActivity$PlaceholderFragment">
 
     <RelativeLayout
-        android:layout_width="335dp"
-        android:layout_height="445dp"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp">
 
@@ -25,7 +25,6 @@
             android:text="FRAGMENT B"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
